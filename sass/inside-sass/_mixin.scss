@@ -1,0 +1,86 @@
+// h1-Property
+@mixin h1-property {
+	& {
+		font-weight: 700;
+		letter-spacing: 2px;
+		font-family: nunito;
+	}
+}
+@mixin h6-property {
+	& {
+		font-family: nunito;
+		font-size: 13px;
+		font-weight: 900;
+		color: $red-color;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		display: inline-block;
+	}
+}
+@mixin h3-property {
+	font-family: nunito;
+	font-size: 32px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	margin: .8rem 0;
+	@include respond(small-phone) {
+		font-size: 28px !important;
+	}
+}
+@mixin description-property {
+	font-size: 18px;
+	letter-spacing: 1px;
+	font-family: nunito;
+	font-weight: 600;
+	@if respond(phone) {
+		padding: 0 0;
+	}
+	@include respond(small-laptop) {
+		padding: 0 12rem;
+	}
+}
+// button Property
+@mixin btn-property {
+	& {
+		padding: .4rem 1.5rem;
+		font-size: 1rem;
+		background-color: transparent;
+		font-weight: 500;
+		font-family: poppins;
+		position: relative;
+		display: inline-block;
+		letter-spacing: 1px;
+		border-radius: 2rem;
+		transition: all .3s;
+		&:hover {
+			border: 2px solid $red-color;
+			box-shadow: 0px 10px 5px 0px rgba(0,0,0,0.2);
+			transform: translateY(-1.5px);
+			@include respond(phone) {
+				box-shadow: none;
+				transform: none;
+			}
+		}
+		&:active {
+			box-shadow: 0px 5px 2.5px 0px rgba(0,0,0,0.2);
+			transform: translateY(1px);
+			@include respond(phone) {
+				box-shadow: none;
+				transform: none;
+			}
+		}
+	}
+}
+//media Quries
+@mixin respond($breakpoint) {
+	@if $breakpoint == small-phone {
+		@media (max-width: 350px) { @content };
+	}
+	@if $breakpoint == phone {
+		@media (max-width: 991px) and (min-width: 351px) { @content };
+	}
+	@if $breakpoint == small-laptop {
+		@media (max-width: 1441px) and (min-width: 992px) { @content };
+	}
+}

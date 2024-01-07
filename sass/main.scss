@@ -1,0 +1,18 @@
+@font-face {
+	font-family: opensans;
+	src: url(../font@face/opensans/OpenSans-Regular.ttf);
+}
+@font-face {
+	font-family: poppins;
+	src: url(../font@face/poppins/Poppins-Regular.ttf);
+}
+@font-face {
+	font-family: nunito;
+	src: url(../font@face/nunito/Nunito-Regular.ttf)
+}
+//multi-files
+@import "inside-sass/variables.scss";
+@import "inside-sass/mixin.scss";
+@import "inside-sass/singlepage.scss";
+@import "inside-sass/base.scss";
+@import "inside-sass/animation";
